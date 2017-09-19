@@ -1,6 +1,6 @@
 # FJTabbarViewController
 
-# 使用方法
+# 一.使用方法
 
     /**
      根据 传入参数 设置 自定义 tabbarController
@@ -21,7 +21,7 @@
       
       
 
-# 举个🌰 ：
+# 二.举个🌰 ：
 
  
       - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -99,7 +99,7 @@
   
   
 
-# 效果图
+# 三.效果图
   
   
   ![FJTabbarController](https://github.com/fangjinfeng/FJTabbarViewController/blob/master/FJTabbarViewControllerDemo/Snapshots/FJTabbarController.gif)
