@@ -19,7 +19,7 @@
                                  
   # 举个例子
   
-    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+       - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
 
@@ -97,4 +97,4 @@
   
   # 效果图
   
-  ![FJTabbarController]()
+  ![FJTabbarController](https://github.com/fangjinfeng/FJTabbarViewController/blob/master/FJTabbarViewControllerDemo/Snapshots/FJTabbarController.gif)
