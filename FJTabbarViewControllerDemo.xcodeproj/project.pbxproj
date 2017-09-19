@@ -40,6 +40,7 @@
 		30883F3C1F711DBE00019D3A /* tab_wode_hui@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30883F2B1F711DBE00019D3A /* tab_wode_hui@3x.png */; };
 		30883F3D1F711DBE00019D3A /* tab_wode_xuanzhong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30883F2C1F711DBE00019D3A /* tab_wode_xuanzhong@2x.png */; };
 		30883F3E1F711DBE00019D3A /* tab_wode_xuanzhong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30883F2D1F711DBE00019D3A /* tab_wode_xuanzhong@3x.png */; };
+		30883FA21F71495100019D3A /* FJTabbarController.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30883FA11F71495100019D3A /* FJTabbarController.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		30883F2B1F711DBE00019D3A /* tab_wode_hui@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_wode_hui@3x.png"; sourceTree = "<group>"; };
 		30883F2C1F711DBE00019D3A /* tab_wode_xuanzhong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_wode_xuanzhong@2x.png"; sourceTree = "<group>"; };
 		30883F2D1F711DBE00019D3A /* tab_wode_xuanzhong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_wode_xuanzhong@3x.png"; sourceTree = "<group>"; };
+		30883FA11F71495100019D3A /* FJTabbarController.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FJTabbarController.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		30883ECE1F71186A00019D3A /* FJTabbarViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				30883FA01F71495100019D3A /* Snapshots */,
 				30883F1C1F711DBE00019D3A /* Resources */,
 				30883ED21F71186A00019D3A /* AppDelegate.h */,
 				30883ED31F71186A00019D3A /* AppDelegate.m */,
@@ -247,6 +250,14 @@
 				30883F2D1F711DBE00019D3A /* tab_wode_xuanzhong@3x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		30883FA01F71495100019D3A /* Snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				30883FA11F71495100019D3A /* FJTabbarController.gif */,
+			);
+			path = Snapshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				30883F321F711DBE00019D3A /* tab_dianpu_xuanzhong@3x.png in Resources */,
 				30883F3D1F711DBE00019D3A /* tab_wode_xuanzhong@2x.png in Resources */,
 				30883EDC1F71186A00019D3A /* Assets.xcassets in Resources */,
+				30883FA21F71495100019D3A /* FJTabbarController.gif in Resources */,
 				30883F3A1F711DBE00019D3A /* tab_jingxuan_xuanzhong@3x.png in Resources */,
 				30883F3C1F711DBE00019D3A /* tab_wode_hui@3x.png in Resources */,
 				30883F3E1F711DBE00019D3A /* tab_wode_xuanzhong@3x.png in Resources */,
@@ -646,6 +658,7 @@
 				30883EFB1F71186A00019D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30883EFC1F71186A00019D3A /* Build configuration list for PBXNativeTarget "FJTabbarViewControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -654,6 +667,7 @@
 				30883EFE1F71186A00019D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30883EFF1F71186A00019D3A /* Build configuration list for PBXNativeTarget "FJTabbarViewControllerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -662,6 +676,7 @@
 				30883F011F71186A00019D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
