@@ -95,6 +95,8 @@
 
   }
   
+  
   # 效果图
+  
   
   ![FJTabbarController](https://github.com/fangjinfeng/FJTabbarViewController/blob/master/FJTabbarViewControllerDemo/Snapshots/FJTabbarController.gif)
