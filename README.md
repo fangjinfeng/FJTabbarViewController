@@ -1,6 +1,6 @@
 # FJTabbarViewController
 
-# 使用方法:
+# 使用方法
 
     /**
      根据 传入参数 设置 自定义 tabbarController
@@ -16,12 +16,14 @@
                              imageNameArray:(NSArray<NSString *> *)imageNameArray
                      selectedImageNameArray:(NSArray<NSString *> *)selectedImageNameArray
                                  titleArray:(NSArray<NSString *> *)titleArray;
-                                 
-  # 举个例子
+      
+      
+      
+      
+# 举个例子
   
   
-  
-  
+ 
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
             self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
