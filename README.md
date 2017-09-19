@@ -24,13 +24,9 @@
   
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    
+            self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-       self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    
-
-       NSArray *viewControllerArray = [NSArray arrayWithObjects:
+             NSArray *viewControllerArray = [NSArray arrayWithObjects:
 
                                     @"FJCourseViewController",
 
@@ -44,59 +40,58 @@
 
     
 
-      NSArray *imageNameArray = [NSArray arrayWithObjects:
+             NSArray *imageNameArray = [NSArray arrayWithObjects:
 
-                               @"tab_jingxuan_hui.png",
+                                     @"tab_jingxuan_hui.png",
 
-                               @"tab_faxian_hui.png",
+                                     @"tab_faxian_hui.png",
 
-                               @"tab_dianpu_hui.png",
+                                    @"tab_dianpu_hui.png",
 
-                               @"tab_wode_hui.png",
+                                     @"tab_wode_hui.png",
 
-                               nil];
-
-    
-
-      NSArray *selectedImageNameArray = [NSArray arrayWithObjects:
-
-                                       @"tab_jingxuan_xuanzhong.png",
-
-                                       @"tab_faxian_xuanzhong.png",
-
-                                       @"tab_dianpu_xuanzhong.png",
-
-                                       @"tab_wode_xuanzhong.png",
-
-                                       nil];
+                                     nil];
 
     
 
-     NSArray *titleArray = [NSArray arrayWithObjects:
+             NSArray *selectedImageNameArray = [NSArray arrayWithObjects:
 
-                           @"精选",
+                                            @"tab_jingxuan_xuanzhong.png",
 
-                           @"发现",
+                                            @"tab_faxian_xuanzhong.png",
 
-                           @"店铺",
+                                               @"tab_dianpu_xuanzhong.png",
 
-                           @"我的",
+                                             @"tab_wode_xuanzhong.png",
 
-                           nil];
-
-    
-
-      self.window.rootViewController = [[FJTabbarViewController alloc] initWithViewControllerArray:viewControllerArray imageNameArray:imageNameArray selectedImageNameArray:selectedImageNameArray titleArray:titleArray];
+                                              nil];
 
     
 
-      self.window.backgroundColor = [UIColor whiteColor];
+             NSArray *titleArray = [NSArray arrayWithObjects:
 
-      [self.window makeKeyAndVisible];
+                                 @"精选",
 
-     return YES;
+                                @"发现",
+        
+                                 @"店铺",
 
-  }
+                                   @"我的",
+
+                                 nil];
+
+    
+
+            self.window.rootViewController = [[FJTabbarViewController alloc] initWithViewControllerArray:viewControllerArray imageNameArray:imageNameArray selectedImageNameArray:selectedImageNameArray titleArray:titleArray];
+
+    
+
+             self.window.backgroundColor = [UIColor whiteColor];
+
+             [self.window makeKeyAndVisible];
+
+             return YES;
+          }
   
   
   # 效果图
