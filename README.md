@@ -20,12 +20,11 @@
       
       
       
-# 举个例子
-  
-  
+
+# 举个🌰 ：
+
  
- 
-        - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+      - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
             self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
@@ -99,7 +98,8 @@
   
   
   
-  # 效果图
-  
+
+# 效果图
+  
   
   ![FJTabbarController](https://github.com/fangjinfeng/FJTabbarViewController/blob/master/FJTabbarViewControllerDemo/Snapshots/FJTabbarController.gif)
