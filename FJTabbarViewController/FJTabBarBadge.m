@@ -63,7 +63,7 @@ static CGFloat const kFJTabbarBadgeDefaultHeight = 12.0f;
         CGSize titleSize = [self.badgeValue sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.badgeTitleFont, NSFontAttributeName, nil]];
         frame.size.width = MAX(badgeW, titleSize.width + 10);
         frame.size.height = badgeH;
-        frame.origin.x = 58.0f * ([UIScreen mainScreen].bounds.size.width / self.tabBarItemCount) / 375.0f * 4.0f;
+        frame.origin.x = ([UIScreen mainScreen].bounds.size.width / self.tabBarItemCount)/2 + 13;
         frame.origin.y = 2.0f;
         self.frame = frame;
     }

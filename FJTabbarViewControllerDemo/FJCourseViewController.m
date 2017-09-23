@@ -6,6 +6,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+
 #import "FJCourseViewController.h"
 
 @interface FJCourseViewController ()
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"课程";
+    self.navigationItem.title = @"精选";
 }
 
 - (void)didReceiveMemoryWarning {

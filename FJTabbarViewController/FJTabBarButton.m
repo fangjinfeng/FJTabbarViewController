@@ -67,6 +67,8 @@
     
     [super layoutSubviews];
     
+    [self.tabBarBadge layoutSubviews];
+    
     // imageView
     CGFloat imageX = 0;
     CGFloat imageY = 0;

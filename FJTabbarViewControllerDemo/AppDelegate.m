@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FJCourseViewController.h"
 #import "FJTabbarViewController.h"
 
 @interface AppDelegate ()
@@ -49,7 +50,6 @@
                            nil];
     
     self.window.rootViewController = [[FJTabbarViewController alloc] initWithViewControllerArray:viewControllerArray imageNameArray:imageNameArray selectedImageNameArray:selectedImageNameArray titleArray:titleArray];
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -81,6 +81,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 
 @end

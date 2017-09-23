@@ -48,7 +48,10 @@
     [self setupDefualutValue];
 }
 
-
+- (void)viewDidLayoutSubviews {
+    self.tabBarView.frame = self.tabBar.bounds;
+    [self.tabBarView layoutSubviews];
+}
 
 #pragma mark --- private method
 // 设置 相关 属性
@@ -57,7 +60,7 @@
                   selectedImageName:(NSString *)selectedNameImage
                               title:(NSString *)title {
     UIViewController *vc = [[NSClassFromString(viewControllerStr) alloc] init];
-    vc.tabBarItem.title = title;
+    vc.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:imageName];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedNameImage];
     [self.itemArray addObject:vc.tabBarItem];
@@ -109,6 +112,7 @@
     
     self.selectedIndex = index;
 }
+
 
 
 #pragma mark --- setter method
