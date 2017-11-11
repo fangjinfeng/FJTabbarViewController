@@ -49,7 +49,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    self.tabBarView.frame = self.tabBar.bounds;
+    self.tabBarView.frame = CGRectMake(0, self.tabBar.bounds.origin.y, self.tabBar.bounds.size.width, 49.0f);
     [self.tabBarView layoutSubviews];
 }
 
