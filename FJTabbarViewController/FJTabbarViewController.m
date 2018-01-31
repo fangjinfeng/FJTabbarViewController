@@ -8,6 +8,7 @@
 
 #import "FJTabBarView.h"
 #import "FJTabbarDefine.h"
+#import "FJTabbarViewStyle.h"
 #import "FJTabbarViewController.h"
 
 @interface FJTabbarViewController ()<FJTabBarViewDelegate>
@@ -19,7 +20,7 @@
 
 @implementation FJTabbarViewController
 
-#pragma mark --- init method
+#pragma mark --------------- Life Circle
 
 - (instancetype)initWithViewControllerArray:(NSArray<NSString *> *)viewControllerArray
                              imageNameArray:(NSArray<NSString *> *)imageNameArray
@@ -40,7 +41,6 @@
     return self;
 }
 
-#pragma mark --- life circle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,7 +53,28 @@
     [self.tabBarView layoutSubviews];
 }
 
-#pragma mark --- private method
+
+#pragma mark --------------- Public Methods
+// 依据 按键 索引 获取 tabbar button
+- (FJTabBarButton *)tabbarButtonWithButtonIndex:(NSUInteger)buttonIndex {
+   return [self.tabBarView tabbarButtonWithButtonIndex:buttonIndex];
+}
+
+// 设置 选中 item
+- (void)setSelectedTabbarButtonIndex:(NSUInteger)buttonIndex  {
+    [self.tabBarView setSelectedTabbarButtonIndex:buttonIndex];
+}
+
+#pragma mark --------------- Custom Delegate
+
+- (void)tabBarView:(FJTabBarView *)tabBarView
+    didClickButton:(NSInteger)index {
+    
+    self.selectedIndex = index;
+}
+
+
+#pragma mark --------------- Private Methods
 // 设置 相关 属性
 - (void)setUpOneChildViewController:(NSString *)viewControllerStr
                           imageName:(NSString *)imageName
@@ -73,12 +94,7 @@
 
 // 设置 默认 值
 - (void)setupDefualutValue {
-    self.itemTitleFont = kFJTabbarButtonFontSize;
-    self.badgeTitleFont = kFJTabbarBadgeFontSize;
-    self.itemTitleColor = kFJTabbarButtonNormalTitleColor;
-    self.selectedItemTitleColor = kFJTabbarButtonSelectTitleColor;
-    self.badgeBackgroundColor = kFJTabbarBadgeBackgroundColor;
-    self.itemImageRatio = kFJTabbarItemImageRatio;
+    self.tabbarViewStyle = [[FJTabbarViewStyle alloc] init];
 }
 
 // 设置 tabbr
@@ -105,66 +121,16 @@
     self.tabBar.shadowImage = [[UIImage alloc] init];
 }
 
-#pragma mark --- custom delegate
-
-- (void)tabBarView:(FJTabBarView *)tabBarView
-    didClickButton:(NSInteger)index {
-    
-    self.selectedIndex = index;
-}
-
-
 
 #pragma mark --- setter method
 
-- (void)setItemTitleFont:(UIFont *)itemTitleFont {
-
-    _itemTitleFont = itemTitleFont;
-    self.tabBarView.itemTitleFont = itemTitleFont;
+- (void)setTabbarViewStyle:(FJTabbarViewStyle *)tabbarViewStyle {
+    _tabbarViewStyle = tabbarViewStyle;
+    if (tabbarViewStyle) {
+        self.tabBarView.tabbarViewStyle = tabbarViewStyle;
+    }
 }
 
-- (void)setItemTitleColor:(UIColor *)itemTitleColor {
-    
-    _itemTitleColor = itemTitleColor;
-    self.tabBarView.itemTitleColor = itemTitleColor;
-}
-
-- (void)setItemImageRatio:(CGFloat)itemImageRatio {
-    
-    _itemImageRatio = itemImageRatio;
-    self.tabBarView.itemImageRatio = itemImageRatio;
-}
-
-- (void)setSelectedItemTitleColor:(UIColor *)selectedItemTitleColor {
-    
-    _selectedItemTitleColor = selectedItemTitleColor;
-    self.tabBarView.selectedItemTitleColor = selectedItemTitleColor;
-}
-
-- (void)setBadgeTitleFont:(UIFont *)badgeTitleFont {
-    
-    _badgeTitleFont = badgeTitleFont;
-    self.tabBarView.badgeTitleFont = badgeTitleFont;
-}
-
-- (void)setBadgeBackgroundColor:(UIColor *)badgeBackgroundColor {
-    
-    _badgeBackgroundColor = badgeBackgroundColor;
-    self.tabBarView.badgeBackgroundColor = badgeBackgroundColor;
-}
-
-
-- (void)setBadgeTitleNomalColor:(UIColor *)badgeTitleNomalColor {
-    _badgeTitleNomalColor = badgeTitleNomalColor;
-    
-    self.tabBarView.badgeTitleNomalColor = badgeTitleNomalColor;
-}
-
-
-- (void)setLineViewBackgroundColor:(UIColor *)lineViewBackgroundColor {
-    _lineViewBackgroundColor = lineViewBackgroundColor;
-    self.tabBarView.lineViewBackgroundColor = lineViewBackgroundColor;
-}
 
 #pragma mark --- getter method
 

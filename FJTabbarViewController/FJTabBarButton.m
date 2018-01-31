@@ -10,13 +10,15 @@
 #import "FJTabBarBadge.h"
 #import "FJTabBarButton.h"
 #import "FJTabbarDefine.h"
+#import "FJTabbarViewStyle.h"
 
 
 @interface FJTabBarButton()
+
 /**
- *  TabBar item's badge
+ *  TabBar item image ratio  tabbarItem 图片比例
  */
-@property (nonatomic, strong) FJTabBarBadge *tabBarBadge;
+@property (nonatomic, assign) CGFloat itemImageRatio;
 @end
 
 @implementation FJTabBarButton
@@ -42,7 +44,6 @@
 // 设置 默认 值
 - (void)setupDefaultValue {
     self.itemImageRatio = kFJTabbarItemImageRatio;
-    self.tabBarBadge.badgeValue = @"99+";
     [self setTitleColor:kFJTabbarButtonNormalTitleColor
                forState:UIControlStateNormal];
     [self setTitleColor:kFJTabbarButtonSelectTitleColor
@@ -103,48 +104,6 @@
     self.tabBarBadge.badgeValue = badgeValue;
 }
 
-// image ration
-- (void)setItemImageRatio:(CGFloat)itemImageRatio {
-    
-    _itemImageRatio = itemImageRatio;
-}
-
-// title font
-- (void)setItemTitleFont:(UIFont *)itemTitleFont {
-    
-    _itemTitleFont = itemTitleFont;
-    self.titleLabel.font = itemTitleFont;
-    
-}
-
-// title color
-- (void)setItemTitleColor:(UIColor *)itemTitleColor {
-    
-    _itemTitleColor = itemTitleColor;
-    [self setTitleColor:itemTitleColor forState:UIControlStateNormal];
-}
-
-// selected title color
-- (void)setSelectedItemTitleColor:(UIColor *)selectedItemTitleColor {
-    
-    _selectedItemTitleColor = selectedItemTitleColor;
-    [self setTitleColor:selectedItemTitleColor forState:UIControlStateSelected];
-}
-
-// tip badge title font
-- (void)setBadgeTitleFont:(UIFont *)badgeTitleFont {
-    
-    _badgeTitleFont = badgeTitleFont;
-    self.tabBarBadge.badgeTitleFont = badgeTitleFont;
-}
-
-// badge title font
-- (void)setBadgeBackgroundColor:(UIColor *)badgeBackgroundColor {
-    
-    _badgeBackgroundColor = badgeBackgroundColor;
-    self.tabBarBadge.backgroundColor = badgeBackgroundColor;
-}
-
 // tabbarItem count
 - (void)setTabBarItemCount:(NSInteger)tabBarItemCount {
     
@@ -152,10 +111,15 @@
     self.tabBarBadge.tabBarItemCount = tabBarItemCount;
 }
 
-// tabbar badge title normal color
-- (void)setBadgeTitleNomalColor:(UIColor *)badgeTitleNomalColor {
-    _badgeTitleNomalColor = badgeTitleNomalColor;
-    self.tabBarBadge.badgeTitleNomalColor = badgeTitleNomalColor;
+
+- (void)setTabbarViewStyle:(FJTabbarViewStyle *)tabbarViewStyle {
+    _tabbarViewStyle = tabbarViewStyle;
+    if (tabbarViewStyle) {
+        self.titleLabel.font = _tabbarViewStyle.itemTitleFont;
+         [self setTitleColor:_tabbarViewStyle.normalItemTitleColor forState:UIControlStateNormal];
+        [self setTitleColor:_tabbarViewStyle.selectedItemTitleColor forState:UIControlStateSelected];
+        self.tabBarBadge.tabbarViewStyle = _tabbarViewStyle;
+    }
 }
 
 #pragma mark --- getter method

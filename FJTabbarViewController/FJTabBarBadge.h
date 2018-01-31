@@ -27,6 +27,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class FJTabbarViewStyle;
 @interface FJTabBarBadge : UIButton
 
 /**
@@ -40,13 +41,8 @@
 @property (nonatomic, assign) NSInteger tabBarItemCount;
 
 /**
- *  TabBar item's badge title font
+ *  tabbarViewStyle
  */
-@property (nonatomic, strong) UIFont *badgeTitleFont;
-
-/**
- *  TabBar item's badge nomal color 
- */
-@property (nonatomic, strong) UIColor *badgeTitleNomalColor;
+@property (nonatomic, strong) FJTabbarViewStyle *tabbarViewStyle;
 
 @end

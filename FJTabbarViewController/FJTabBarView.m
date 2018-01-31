@@ -9,17 +9,18 @@
 #import "FJTabBarView.h"
 #import "FJTabBarButton.h"
 #import "FJTabbarDefine.h"
+#import "FJTabbarViewStyle.h"
 
 @interface FJTabBarView ()
 
 // selected button
 @property (nonatomic, weak) UIButton *selectedButton;
 
-// buttons array
-@property (nonatomic, strong) NSMutableArray *buttonArray;
-
 // horizontal view
 @property (nonatomic, strong) UIView *horizontalLineView;
+
+// buttons array
+@property (nonatomic, strong) NSMutableArray <FJTabBarButton *>*buttonArray;
 
 @end
 
@@ -30,7 +31,6 @@
 - (instancetype)init {
     
     if(self = [super init]) {
-        self.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
         [self addSubview:self.horizontalLineView];
     }
     return self;
@@ -39,23 +39,26 @@
 #pragma mark --- public method
 
 // 设置 选中 item
-- (void)setSelectedIndex:(NSInteger)index {
-    
-    [self itemButtonClicked:self.buttonArray[index]];
+- (void)setSelectedTabbarButtonIndex:(NSUInteger)buttonIndex {
+     if (buttonIndex < self.buttonArray.count) {
+         [self itemButtonClicked:self.buttonArray[buttonIndex]];
+     }
 }
 
+// 依据 按键 索引 获取 tabbar button
+- (FJTabBarButton *)tabbarButtonWithButtonIndex:(NSUInteger)buttonIndex {
+    if (buttonIndex < self.buttonArray.count) {
+        return  self.buttonArray[buttonIndex];
+    }
+    return nil;
+}
 #pragma mark --- private method
 
 // 设置 LETabbarButton 属性
 - (void)setupButtonAttrWithTabbarButton:(FJTabBarButton *)button {
     
     button.tabBarItemCount = _itemArray.count;
-    button.itemTitleColor = self.itemTitleColor;
-    button.badgeTitleFont = self.badgeTitleFont;
-    button.itemTitleFont = self.itemTitleFont;
-    button.selectedItemTitleColor = self.selectedItemTitleColor;
-    button.badgeBackgroundColor = self.badgeBackgroundColor;
-    button.itemImageRatio = self.itemImageRatio;
+    button.tabbarViewStyle = _tabbarViewStyle;
 }
 
 #pragma mark --- response event
@@ -118,11 +121,16 @@
     }
 }
 
-// 设置 分割线 背景色
-- (void)setLineViewBackgroundColor:(UIColor *)lineViewBackgroundColor {
-    
-    _lineViewBackgroundColor = lineViewBackgroundColor;
-    self.horizontalLineView.backgroundColor = lineViewBackgroundColor;
+- (void)setTabbarViewStyle:(FJTabbarViewStyle *)tabbarViewStyle {
+    _tabbarViewStyle = tabbarViewStyle;
+    if (tabbarViewStyle) {
+        
+        self.horizontalLineView.backgroundColor = _tabbarViewStyle.lineViewBackgroundColor;
+        
+        [self.buttonArray enumerateObjectsUsingBlock:^(FJTabBarButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.tabbarViewStyle = tabbarViewStyle;
+        }];
+    }
 }
 
 

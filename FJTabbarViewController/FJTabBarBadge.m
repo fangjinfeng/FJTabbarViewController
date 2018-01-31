@@ -26,11 +26,7 @@
 //  SOFTWARE.
 
 #import "FJTabBarBadge.h"
-
-// 默认 宽度
-static CGFloat const kFJTabbarBadgeDefaultWidth = 12.0f;
-// 默认 高度
-static CGFloat const kFJTabbarBadgeDefaultHeight = 12.0f;
+#import "FJTabbarViewStyle.h"
 
 @implementation FJTabBarBadge
 
@@ -41,7 +37,6 @@ static CGFloat const kFJTabbarBadgeDefaultHeight = 12.0f;
     if (self = [super initWithFrame:frame]) {
         
         self.userInteractionEnabled = NO;
-        self.layer.cornerRadius = (kFJTabbarBadgeDefaultWidth / 2.0);
         self.hidden = YES;
     }
     return self;
@@ -56,14 +51,19 @@ static CGFloat const kFJTabbarBadgeDefaultHeight = 12.0f;
     self.hidden = !(BOOL)self.badgeValue;
     if (self.badgeValue.length > 0) {
         [self setTitle:self.badgeValue forState:UIControlStateNormal];
-        [self setTitleColor:self.badgeTitleNomalColor forState:UIControlStateNormal];
+        [self setTitleColor:_tabbarViewStyle.badgeTitleNomalColor forState:UIControlStateNormal];
         CGRect frame = self.frame;
-        CGFloat badgeW = kFJTabbarBadgeDefaultWidth;
-        CGFloat badgeH = kFJTabbarBadgeDefaultHeight;
-        CGSize titleSize = [self.badgeValue sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.badgeTitleFont, NSFontAttributeName, nil]];
-        frame.size.width = MAX(badgeW, titleSize.width + 10);
+        CGFloat badgeW = _tabbarViewStyle.badgeViewNormalHeight;
+        CGFloat badgeH = _tabbarViewStyle.badgeViewNormalHeight;
+        CGSize titleSize = [self.badgeValue sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:_tabbarViewStyle.badgeTitleFont, NSFontAttributeName, nil]];
+        if ([self.badgeValue integerValue] < 10) {
+            frame.size.width = badgeW;
+        }
+        else {
+            frame.size.width = titleSize.width + 10;
+        }
         frame.size.height = badgeH;
-        frame.origin.x = ([UIScreen mainScreen].bounds.size.width / self.tabBarItemCount)/2 + 13;
+        frame.origin.x = ([UIScreen mainScreen].bounds.size.width / self.tabBarItemCount)/2 + (frame.size.width/2.0) + _tabbarViewStyle.badgeViewToTabbarButtonSpacing;
         frame.origin.y = 2.0f;
         self.frame = frame;
     }
@@ -71,18 +71,21 @@ static CGFloat const kFJTabbarBadgeDefaultHeight = 12.0f;
 
 #pragma mark --- setter method
 
-// 设置 消息 字体
-- (void)setBadgeTitleFont:(UIFont *)badgeTitleFont {
-    
-    _badgeTitleFont = badgeTitleFont;
-    self.titleLabel.font = badgeTitleFont;
+- (void)setTabbarViewStyle:(FJTabbarViewStyle *)tabbarViewStyle {
+    _tabbarViewStyle = tabbarViewStyle;
+    if (tabbarViewStyle) {
+        self.layer.cornerRadius = _tabbarViewStyle.badgeViewNormalHeight / 2.0f;
+        self.backgroundColor = _tabbarViewStyle.badgeBackgroundColor;
+        self.titleLabel.font = _tabbarViewStyle.badgeTitleFont;
+        [self layoutSubviews];
+    }
 }
-
 
 // 设置 消息 值
 - (void)setBadgeValue:(NSString *)badgeValue {
     
     _badgeValue = [badgeValue copy];
+     [self layoutSubviews];
 }
 
 @end

@@ -8,47 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class FJTabBarButton;
+@class FJTabbarViewStyle;
+
 @interface FJTabbarViewController : UITabBarController
 
 /**
- *  TabBar item title color tabbarItem 普通 字体颜色
+ *  tabbarViewStyle
  */
-@property (nonatomic, strong) UIColor *itemTitleColor;
+@property (nonatomic, strong) FJTabbarViewStyle *tabbarViewStyle;
 
-/**
- *  TabBar item title font   tabbarItem 字体 大小
- */
-@property (nonatomic, strong) UIFont *itemTitleFont;
-
-/**
- *  TabBar item's badge title font 消息提示 字体大小
- */
-@property (nonatomic, strong) UIFont *badgeTitleFont;
-
-/**
- *  TabBar item image ratio  tabbarItem 图片比例
- */
-@property (nonatomic, assign) CGFloat itemImageRatio;
-
-/**
- *  TabBar item's badge background color 消息 提示 背景色
- */
-@property (nonatomic, strong) UIColor *badgeBackgroundColor;
-
-/**
- *  TabBar item's badge nomal color 消息 提示 通常 字体颜色
- */
-@property (nonatomic, strong) UIColor *badgeTitleNomalColor;
-
-/**
- *  TabBar selected item title color  tabbarItem 选中 颜色
- */
-@property (nonatomic, strong) UIColor *selectedItemTitleColor;
-
-/**
- *  TabBar LineView backgroud color 背景 颜色
- */
-@property (nonatomic, strong) UIColor *lineViewBackgroundColor;
 
 /**
  根据 传入参数 设置 自定义 tabbarController
@@ -64,4 +33,19 @@
                      selectedImageNameArray:(NSArray<NSString *> *)selectedImageNameArray
                                  titleArray:(NSArray<NSString *> *)titleArray;
 
+
+/**
+ 依据 索引 设置 选择 按键
+ 
+ @param buttonIndex 按键 索引
+ */
+- (void)setSelectedTabbarButtonIndex:(NSUInteger)buttonIndex;
+
+/**
+ 依据 按键 索引 获取 tabbar button
+
+ @param buttonIndex 按键 索引
+ @return 返回 按键
+ */
+- (FJTabBarButton *)tabbarButtonWithButtonIndex:(NSUInteger)buttonIndex;
 @end

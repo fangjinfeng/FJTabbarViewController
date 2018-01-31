@@ -8,58 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
+@class FJTabBarBadge;
+@class FJTabbarViewStyle;
 @interface FJTabBarButton : UIButton
-
-
 /**
  *  TabBar item badge value
  */
 @property (nonatomic, copy) NSString *badgeValue;
-
 /**
  *  TabBar item
  */
 @property (nonatomic, strong) UITabBarItem *item;
-
-/**
- *  TabBar item image ratio
- */
-@property (nonatomic, assign) CGFloat itemImageRatio;
-
-/**
- *  TabBar item title font
- */
-@property (nonatomic, strong) UIFont *itemTitleFont;
-
-/**
- *  TabBar item's badge title font
- */
-@property (nonatomic, strong) UIFont *badgeTitleFont;
-
 /**
  *  TabBar's item count
  */
 @property (nonatomic, assign) NSInteger tabBarItemCount;
-
-
 /**
- *  TabBar item title color
+ *  TabBar item's badge
  */
-@property (nonatomic, strong) UIColor *itemTitleColor;
-
+@property (nonatomic, strong) FJTabBarBadge *tabBarBadge;
 /**
- *  TabBar item's badge background color
+ *  tabbarViewStyle
  */
-@property (nonatomic, strong) UIColor *badgeBackgroundColor;
-
-/**
- *  TabBar selected item title color
- */
-@property (nonatomic, strong) UIColor *selectedItemTitleColor;
-
-/**
- *  TabBar item's badge nomal color
- */
-@property (nonatomic, strong) UIColor *badgeTitleNomalColor;
+@property (nonatomic, strong) FJTabbarViewStyle *tabbarViewStyle;
 
 @end

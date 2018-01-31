@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class FJTabBarView;
+@class FJTabBarButton;
+@class FJTabbarViewStyle;
 
 @protocol FJTabBarViewDelegate <NSObject>
 
@@ -30,51 +32,29 @@
 @property (nonatomic, copy) NSString *badgeValue;
 
 /**
- *  TabBar item title color
+ *  tabbarViewStyle
  */
-@property (nonatomic, strong) UIColor *itemTitleColor;
-
-/**
- *  TabBar item title font
- */
-@property (nonatomic, strong) UIFont *itemTitleFont;
-
-/**
- *  TabBar item's badge title font
- */
-@property (nonatomic, strong) UIFont *badgeTitleFont;
-
-/**
- *  TabBar item image ratio
- */
-@property (nonatomic, assign) CGFloat itemImageRatio;
-
-
-/**
- *  TabBar item's badge background color
- */
-@property (nonatomic, strong) UIColor *badgeBackgroundColor;
-
-/**
- *  TabBar selected item title color
- */
-@property (nonatomic, strong) UIColor *selectedItemTitleColor;
-
-/**
- *  TabBar item's badge nomal color 
- */
-@property (nonatomic, strong) UIColor *badgeTitleNomalColor;
-
-/**
- *  TabBar LineView backgroud color 
- */
-@property (nonatomic, strong) UIColor *lineViewBackgroundColor;
+@property (nonatomic, strong) FJTabbarViewStyle *tabbarViewStyle;
 
 /**
  *  TabBar delegate
  */
 @property (nonatomic, weak) id<FJTabBarViewDelegate> delegate;
 
-- (void)setSelectedIndex:(NSInteger)index;
 
+/**
+ 依据 索引 设置 选择 按键
+
+ @param buttonIndex 按键 索引
+ */
+- (void)setSelectedTabbarButtonIndex:(NSUInteger)buttonIndex;
+
+
+/**
+ 依据 按键 索引 获取 tabbar button
+ 
+ @param buttonIndex 按键 索引
+ @return 返回 按键
+ */
+- (FJTabBarButton *)tabbarButtonWithButtonIndex:(NSUInteger)buttonIndex;
 @end

@@ -23,6 +23,11 @@
 // tabbar item image ratio
 #define kFJTabbarItemImageRatio 0.7
 
+// tabbar item badge height
+#define kFJTabbarbadgeViewNormalHeight 15.0f;
+
+// tabbar item badge to tabbar button spacing
+#define kFJTabbarbadgeViewToTabbarButtonSpacing 3.0f;
 
 /** 颜色 **/
 
@@ -34,8 +39,12 @@
 #define kFJTabbarButtonSelectTitleColor kFJColorFromRGB(0xFE5252)
 
 
-// tabbar button select color
+// tabbar button badge background color
 #define kFJTabbarBadgeBackgroundColor kFJColorFromRGB(0xFE5252)
+
+
+// tabbar button badge normal color
+#define kFJTabbarBadgeTitleNormalColor kFJColorFromRGB(0xFFFFFF)
 
 
 // tabbar button select color
