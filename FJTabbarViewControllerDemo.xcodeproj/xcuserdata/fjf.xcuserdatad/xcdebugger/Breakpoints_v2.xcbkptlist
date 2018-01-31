@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJTabbarViewController/FJTabBarBadge.m"
-            timestampString = "539062053.227438"
+            timestampString = "539062359.27352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJTabbarViewController/FJTabBarButton.m"
-            timestampString = "539062053.2275079"
+            timestampString = "539062359.273604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJTabbarViewController/FJTabBarView.m"
-            timestampString = "539062053.22756"
+            timestampString = "539062359.273666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
             endingLineNumber = "126"
-            landmarkName = "-setItemArray:"
+            landmarkName = "-setTabbarViewStyle:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJTabbarViewController/FJTabBarView.m"
-            timestampString = "539062053.227609"
+            timestampString = "539062359.27372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
             endingLineNumber = "131"
-            landmarkName = "FJTabBarView"
-            landmarkType = "3">
+            landmarkName = "-setTabbarViewStyle:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

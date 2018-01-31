@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FJTabbarViewStyle.h"
 #import "FJCourseViewController.h"
 #import "FJTabbarViewController.h"
 
@@ -49,7 +50,9 @@
                            @"我的",
                            nil];
     
-    self.window.rootViewController = [[FJTabbarViewController alloc] initWithViewControllerArray:viewControllerArray imageNameArray:imageNameArray selectedImageNameArray:selectedImageNameArray titleArray:titleArray];
+    FJTabbarViewController *tabbarViewController = [[FJTabbarViewController alloc] initWithViewControllerArray:viewControllerArray imageNameArray:imageNameArray selectedImageNameArray:selectedImageNameArray titleArray:titleArray];;
+    tabbarViewController.tabbarViewStyle = [[FJTabbarViewStyle alloc] init];
+    self.window.rootViewController = tabbarViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
