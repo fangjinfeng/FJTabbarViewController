@@ -74,14 +74,14 @@
     CGFloat imageX = 0;
     CGFloat imageY = 0;
     CGFloat imageW = self.bounds.size.width;
-    CGFloat imageH = self.bounds.size.height * self.itemImageRatio;
+    CGFloat imageH = 49.0f * self.itemImageRatio;
     self.imageView.frame = CGRectMake(imageX, imageY, imageW, imageH);
     
     // title
     CGFloat titleX = 0;
     CGFloat titleY = imageH - 3;
     CGFloat titleW = self.bounds.size.width;
-    CGFloat titleH = self.bounds.size.height - titleY;
+    CGFloat titleH = 49.0f - titleY;
     self.titleLabel.frame = CGRectMake(titleX, titleY, titleW, titleH);
 }
 
